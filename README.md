@@ -1,1 +1,1 @@
-# seoeul.github.io
+# seoeul
