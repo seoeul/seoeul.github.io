@@ -1,1 +1,9 @@
-<a href = "seoeul.github.io/home.html">home<a>
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Welcome</title>
+    </head>
+    <body>
+        <h1>Hi, everyone!</h1>
+    </body>
+</html>
