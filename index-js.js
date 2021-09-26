@@ -1,4 +1,4 @@
-const fs = require("fs");
+const fs = require("node_modules/fs");
 
 window.onload = () => {
     const files = fs.readdirSync("./_posts");
