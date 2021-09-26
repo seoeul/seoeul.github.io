@@ -1,6 +1,8 @@
 const fs = require("fs");
 
-window.onload = function() {
+window.addEventListener("load", showList);
+
+function showList() {
     // const title = "";
     // const f = fs.readdirSync("./_posts");
     // for (const file of f) {
@@ -17,4 +19,4 @@ window.onload = function() {
     const newText = document.createTextNode("hi");
     newSec.appendChild(newText);
     document.body.appendChild(newSec);
-};
+}
