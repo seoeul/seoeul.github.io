@@ -1,5 +1,43 @@
-body {
+html, body {
+    margin: 0px;
     font-family: "Arial";
-    padding: 5%;
     color: #404040;
+}
+h1 {
+    margin: 0px;
+}
+#header {
+    height: 100px;
+    background-color: #404040;
+    color: #ffffff;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+#page {
+    display: flex;
+    justify-content: space-between;
+}
+#sidebar {
+    width: 20%;
+    height: 100px;
+    background-color: #657AE6;
+}
+#main {
+    width: 80%;
+}
+#navbar {
+    width: 150px;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+#navbar li {
+    display: flex;
+}
+#navbar a {
+    color: #ffffff;
+    text-decoration: none;
 }
