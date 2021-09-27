@@ -6,7 +6,7 @@ html, body {
 h1 {
     margin: 0px;
 }
-#header {
+.header {
     height: 100px;
     background-color: #404040;
     color: #ffffff;
@@ -15,29 +15,29 @@ h1 {
     justify-content: space-between;
     align-items: baseline;
 }
-#page {
+.page {
     display: flex;
     justify-content: space-between;
 }
-#sidebar {
+.sidebar {
     width: 20%;
     height: 100px;
     background-color: #657AE6;
 }
-#main {
+.main {
     width: 80%;
 }
-#navbar {
+.navbar {
     width: 150px;
     margin: 0px;
     padding: 0px;
     display: flex;
     justify-content: space-between;
 }
-#navbar li {
+.navbar li {
     display: flex;
 }
-#navbar a {
+.navbar a {
     color: #ffffff;
     text-decoration: none;
 }
