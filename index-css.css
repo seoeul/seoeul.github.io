@@ -27,6 +27,7 @@ h1 {
 }
 .main {
     grid-area: main;
+    height: 500px;
 }
 .navbar {
     width: 150px;
