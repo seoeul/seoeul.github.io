@@ -12,7 +12,6 @@ html, body {
 }
 h1 {
     margin: 0px;
-    grid-column: 1/2;
 }
 .container {
     display: grid;
