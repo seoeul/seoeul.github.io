@@ -1,45 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
 html, body {
     margin: 0px;
-    font-family: "Arial";
+    font-family: "Quicksand";
+    font-size: 1rem;
     color: #404040;
+    background-color: #e9e9e9;
+}
+* {
+    box-sizing: border-box;
 }
 h1 {
     margin: 0px;
+    grid-column: 1/2;
 }
 .container {
     display: grid;
+    grid-template-columns: 1fr minmax(100px, 4fr);
+    grid-template-rows: auto minmax(100vh, auto);
     grid-template-areas: 
-    "header header header header"
-    "sidebar main main main";
+    "header header"
+    "sidebar main";
 }
 .header {
     grid-area: header;
-    background-color: #404040;
-    color: #ffffff;
-    padding: 100px;
-    display: flex;
+    padding: 80px;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: baseline;
 }
 .sidebar {
     grid-area: sidebar;
-    background-color: #657AE6;
 }
 .main {
     grid-area: main;
-    height: 500px;
 }
 .navbar {
-    width: 150px;
     margin: 0px;
     padding: 0px;
-    display: flex;
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: auto auto;
     justify-content: space-between;
-}
-.navbar li {
-    display: flex;
+    align-items: baseline;
 }
 .navbar a {
-    color: #ffffff;
+    color: #404040;
+    padding: 15px 20px;
     text-decoration: none;
+    transition: all 0.3s ease-in-out;
+}
+.navbar a:hover {
+    background-color: #40404020;
 }
