@@ -1,5 +1,5 @@
 const blogs = document.querySelector(".blogs");
-let title = ["Making_blog", "우애애애애애ㅐㅇㅇ", "우웅우우우우우ㅜ우우ㅜ"];
+let title = ["Making_blog", "CSS+html_frontend", "우웅우우우우우ㅜ우우ㅜ"];
 
 const create = (n) => {
 
