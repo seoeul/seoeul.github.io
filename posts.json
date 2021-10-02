@@ -1,0 +1,18 @@
+{
+    "web": [
+        {
+            "title": "Making_blog", 
+            "overview": "Making blog with html, javascript, css."
+        },
+        {
+            "title": "CSS+html_frontend",
+            "overview": "Frontend that I learned by making blog."
+        }
+    ],
+    "javascript": [
+        {
+            "title": "Javascript_Discord_bot_develop",
+            "overview": "Making Discord bot using node.js."
+        }
+    ]
+}
