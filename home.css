@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
 
-html, body {
+body {
     margin: 0px;
     font-family: "Quicksand";
     font-size: 1rem;
@@ -13,6 +13,7 @@ html, body {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    cursor: none;
 }
 a, button {
     text-decoration: none;
@@ -23,44 +24,58 @@ a {
 .container {
     display: grid;
     grid-template-columns: 1fr minmax(100px, 4fr);
-    grid-template-rows: auto minmax(100vh, auto);
     grid-template-areas: 
-    "header header"
     "sidebar main";
 }
 .header {
-    grid-area: header;
     padding: 80px;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
     align-items: baseline;
 }
-.sidebar {
-    grid-area: sidebar;
-}
 .main {
-    grid-area: main;
+    padding: 5vw;
 }
 .navbar {
     margin: 0px;
-    padding: 0px;
+    padding: 10px;
     list-style-type: none;
     display: grid;
     grid-template-columns: auto auto;
+    column-gap: 50px;
     align-items: baseline;
 }
-.navbar a {
+.nav-a {
     color: #404040;
-    padding: 15px 20px;
-    transition: all 0.3s ease-in-out;
+    position: relative;
+    padding: 5px;
+    text-transform: uppercase;
 }
-.navbar a:hover {
-    background-color: #ffffff50;
+.nav-a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #e9e9e9;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
 }
 
+.nav-a:hover {
+    color: #e9e9e9;
+}
+.nav-a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+
 .blogs {
-    padding: 30px 10vw;
+    padding: 30px 5vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
@@ -77,5 +92,35 @@ a {
     line-height: 150%;
 }
 .category {
-    padding: 0px 10vw;
+    padding: 0px 5vw;
+}
+
+.viewport {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+.cursor {
+    position: absolute;
+    border: solid 1px #404040;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    transition: 0.3s ease;
+    transition-property: background-color, transform;
+    z-index: -1;
+}
+.cursor-black-grow {
+    transform: scale(2);
+    background-color: #404040;
+    transition: 0.3s ease;
+    transition-property: background-color, transform;
+}
+.cursor-white-grow {
+    transform: scale(2);
+    background-color: #e9e9e950;
+    transition: 0.3s ease;
+    transition-property: background-color, transform;
 }
