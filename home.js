@@ -2,17 +2,34 @@ let category = [];
 let title = [];
 let overview = [];
 
-$.getJSON("./posts.json", (data) => {
-    $.each(data, (key, value) => {
-        category.push(key);
-        $.each(value, (key, value) => {
-            title.push(value.title);
-            overview.push(value.overview);
-        });
-    });
-    createBlogcard(title.length);
-    cursor();
-});
+const post = {
+    web: [
+        {
+            title: "Making_blog", 
+            overview: "Making blog with html, javascript, css."
+        },
+        {
+            title: "CSS+html_frontend",
+            overview: "Frontend that I learned by making blog."
+        }
+    ],
+    javascript: [
+        {
+            title: "Javascript_Discord_bot_develop",
+            overview: "Making Discord bot using node.js."
+        }
+    ]
+}
+
+const init = () => {
+    for (let c in post) {
+        for (let i in post[c]) {
+            category.push(c);
+            title.push(post[c][i].title);
+            overview.push(post[c][i].overview);
+        }
+    }
+};
 
 const createBlogcard = (t) => {
 
@@ -30,7 +47,7 @@ const createBlogcard = (t) => {
         blogoverview.innerHTML = overview[i];
 
         const img = document.createElement("img");
-        img.setAttribute("src", `./img/${title[i]}.png`);
+        img.setAttribute("src", `./posts/${category[i]}/${title[i]}/${title[i]}.png`);
         img.setAttribute("class", "blog-img");
 
         const blogcard = document.createElement("div");
@@ -41,7 +58,7 @@ const createBlogcard = (t) => {
 
         const bloglink = document.createElement("a");
         bloglink.setAttribute("class", "blog-link");
-        bloglink.setAttribute("href", `./posts/${title[i]}.html`);
+        bloglink.setAttribute("href", `./posts/${category[i]}/${title[i]}`);
         bloglink.appendChild(blogcard);
 
         section.appendChild(bloglink);
@@ -58,7 +75,7 @@ const createBlogcard = (t) => {
 
 };
 
-const cursor = () => {
+const cursorEffect = () => {
     const cursor = document.querySelector(".cursor")
 
     document.addEventListener("mousemove", e => {
@@ -91,3 +108,7 @@ const cursor = () => {
         });
     });
 };
+
+init();
+createBlogcard(title.length);
+cursorEffect();
