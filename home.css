@@ -21,11 +21,11 @@ a {
     color: #404040;
 }
 .header {
-    padding: 40px;
+    padding: 20px;
     position: sticky;
     top: 0px;
     background-color: #dbdbdb;
-    font-size: 1rem;
+    font-size: 0.8rem;
     z-index: 10;
     display: grid;
     grid-template-columns: auto auto;
@@ -33,10 +33,6 @@ a {
     align-items: baseline;
     transition: 0.3s ease;
     transition-property: padding, font-size;
-}
-.scroll-header {
-    padding: 10px 40px;
-    font-size: 0.5rem;
 }
 .navlist {
     margin: 0px;
@@ -115,7 +111,7 @@ a {
     transform: scale(0.5);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
     * {
         cursor: none;
     }
