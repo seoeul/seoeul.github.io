@@ -111,7 +111,7 @@ a {
     transform: scale(0.5);
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1081px) {
     * {
         cursor: none;
     }
