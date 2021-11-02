@@ -48,7 +48,7 @@ const createBlogcard = (t) => {
 
         const img = document.createElement("img");
         img.setAttribute("src", `./posts/${category[i]}/${title[i]}/${title[i]}.png`);
-        img.setAttribute("class", "blog-img");
+        img.setAttribute("class", "thumbnail");
 
         const blogcard = document.createElement("div");
         blogcard.setAttribute("class", "blog-card");
