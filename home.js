@@ -57,7 +57,7 @@ const createBlogcard = (t) => {
         blogcard.appendChild(blogoverview);
 
         const bloglink = document.createElement("a");
-        bloglink.setAttribute("class", "blog-link");
+        bloglink.setAttribute("class", "blog-link white-grow");
         bloglink.setAttribute("href", `./posts/${category[i]}/${title[i]}`);
         bloglink.appendChild(blogcard);
 
@@ -86,9 +86,12 @@ const cursorEffect = () => {
         cursor.style.top = mouseY;
     });
 
-    const nav_a = document.querySelectorAll(".nav-a");
+    let cursor_black_grow = [];
+    document.querySelectorAll(".black-grow").forEach(each => {
+        cursor_black_grow.push(each);
+    });
 
-    nav_a.forEach(link => {
+    cursor_black_grow.forEach(link => {
         link.addEventListener("mouseover", () => {
             cursor.classList.add("cursor-black-grow");
         });
@@ -97,9 +100,12 @@ const cursorEffect = () => {
         });
     });
 
-    const blog_link = document.querySelectorAll(".blog-link");
+    let cursor_white_grow = [];
+    document.querySelectorAll(".white-grow").forEach(each => {
+        cursor_white_grow.push(each);
+    });
 
-    blog_link.forEach(link => {
+    cursor_white_grow.forEach(link => {
         link.addEventListener("mouseover", () => {
             cursor.classList.add("cursor-white-grow");
         });
@@ -109,6 +115,18 @@ const cursorEffect = () => {
     });
 };
 
+const headerEffect = () => {
+    const header = document.querySelector(".header");
+    window.addEventListener("scroll", () => {
+        if (scrollY > 0) {
+            header.classList.add("scroll-header");
+        } else {
+            header.classList.remove("scroll-header");
+        }
+    });
+};
+
 init();
 createBlogcard(title.length);
 cursorEffect();
+headerEffect();
