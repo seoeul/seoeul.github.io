@@ -47,7 +47,7 @@ const createBlogcard = (t) => {
         blogoverview.innerHTML = overview[i];
 
         const img = document.createElement("img");
-        img.setAttribute("src", `./posts/${category[i]}/${title[i]}/${title[i]}.png`);
+        img.setAttribute("src", `./posts/${category[i]}/${title[i]}/thumbnail.png`);
         img.setAttribute("class", "thumbnail");
 
         const blogcard = document.createElement("div");
