@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset = "utf-8">
+        <meta name = "viewport" content = "initial-scale = 1.0, viewport-fit = cover">
+        <meta name = "apple-mobile-web-app-status-bar-style" content = "black-translucent">
         <title>Stella Jo - Blog</title>
         <link href = "./home.css" rel = "stylesheet" type = "text/css">
     </head>
@@ -10,8 +12,14 @@
             <div class = "cursor"></div>
         </div>
         <header class = "header">
-            <h1 class = "title black-grow"><a href = "https://stella-jo.github.io">Stella Jo</a></h1>
+            <h3 class = "title black-grow"><a href = "https://stella-jo.github.io/blog">Stella Jo</a></h3>
             <nav class = "navbar">
+                <input id = "burger" type = "checkbox">
+                <label for = "burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
                 <ul class = "navlist">
                     <li><a class = "nav-a black-grow" href = "#">About</a></li>
                     <li><a class = "nav-a black-grow" href = "#">Articles</a></li>
@@ -30,7 +38,6 @@
             </svg>
         </a>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
         <script src = "./home.js" type = "text/javascript"></script>
     </body>
 </html>

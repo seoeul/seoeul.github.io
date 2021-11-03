@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
 body {
     margin: 0px;
-    font-family: "Manrope";
+    font-family: "Roboto";
     font-size: 16px;
-    font-size: 2rem;
     color: #404040;
     background-color: #e9e9e9;
 }
@@ -22,29 +21,76 @@ a {
     color: #404040;
 }
 .header {
-    padding: 50px;
+    padding: 20px 30px;
     position: sticky;
     top: 0px;
-    background-color: #dbdbdb;
+    background-color: #e9e9e9;
+    box-shadow: 0px 1px 5px #40404050;
     z-index: 10;
     display: grid;
     grid-template-columns: auto auto;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     transition: 0.3s ease;
-    transition-property: padding, font-size;
 }
 .navlist {
     margin: 0px;
-    padding: 10px;
+    padding: 0px;
+    width: 0px;
+    height: 100%;
+    background-color: #e9e9e9;
     list-style-type: none;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 62px;
+    right: 0px;
+    box-shadow: -1px 5px 5px #40404050;
+    transition: all 0.5s ease;
 }
-.nav-a {
-    color: #404040;
+#burger + label {
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+    display: block;
+}
+#burger + label span {
+    display: block;
     position: relative;
-    padding: 5px;
+    top: 7px;
+    width: 25px;
+    height: 2px;
+    background-color: #404040;
+    transition: all 0.2s ease-in-out;
+}
+#burger + label span:first-child {
+    top: 0px;
+}
+#burger + label span:last-child {
+    top: 14px;
+}
+#burger:checked + label span:first-child {
+    top: 9px;
+    transform: rotate(135deg);
+}
+#burger:checked + label span:nth-child(2) {
+    opacity: 0;
+}
+#burger:checked + label span:last-child {
+    top: 5px;
+    transform: rotate(-135deg);
+}
+#burger:checked ~ .navlist {
+    width: 250px;
+}
+
+.nav-a {
+    display: block;
+    padding: 20px;
     text-transform: uppercase;
+}
+input {
+    display: none;
 }
 
 .main {
@@ -56,22 +102,22 @@ a {
 
 .blogs {
     display: grid;
-    gap: 80px;
-    padding: 30px;
+    gap: 30px;
+    padding: 10px;
 }
 .thumbnail {
     width: 100%;
-    height: 500px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 20px;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
 .blog-overview {
-    margin: 10px 0px 20px;
+    margin: 5px 0px 20px;
     line-height: 150%;
 }
 .category {
-    padding: 0px 30px;
+    padding: 0px 10px;
 }
 
 .top-button {
@@ -93,23 +139,34 @@ a {
     }
 
     .header {
-        padding: 80px;
+        padding: 40px;
+        transition-property: padding, font-size;
     }
 
     .scroll-header {
-        padding: 40px;
+        padding: 20px 30px;
         font-size: 1rem;
     }
 
-    .burger {
+    #burger + label {
         display: none;
     }
 
     .navlist {
-        display: grid;
-        grid-template-columns: auto auto;
-        column-gap: 50px;
-        align-items: baseline;
+        display: flex;
+        position: initial;
+        width: auto;
+        height: auto;
+        gap: 50px;
+        box-shadow: none;
+        background-color: initial;
+        flex-direction: row;
+        justify-content: center;
+        list-style-type: none;
+    }
+    .nav-a {
+        position: relative;
+        padding: 5px;
     }
 
     .nav-a::after {
@@ -139,6 +196,9 @@ a {
     .blogs {
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     }
+    .thumbnail {
+        height: 250px;
+    }
 
     .top-button {
         margin: 40px;
@@ -147,8 +207,8 @@ a {
         right: 0px;
         bottom: 0px;
         position: fixed;
-        width: 5vh;
-        height: 5vh;
+        width: 50px;
+        height: 50px;
         background-image: linear-gradient(135deg, #ffffff, #e9e9e9);
         box-shadow: 1px 1px 5px #40404050,
         inset 0px 0px 10px #ffffff50;
