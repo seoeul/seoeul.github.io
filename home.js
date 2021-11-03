@@ -38,7 +38,7 @@ const createBlogcard = (t) => {
 
     for (i = t-1; i > -1; i--) {
 
-        const blogtitle = document.createElement("h3");
+        const blogtitle = document.createElement("h4");
         blogtitle.setAttribute("class", "blog-title");
         blogtitle.innerHTML = title[i].replaceAll("_", " ");
 
@@ -65,7 +65,7 @@ const createBlogcard = (t) => {
 
     }
     
-    const label = document.createElement("h2");
+    const label = document.createElement("h3");
     label.setAttribute("class", "category");
     label.innerHTML = "Latest";
 
