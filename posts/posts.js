@@ -1,36 +1,3 @@
-let category = [];
-let title = [];
-let overview = [];
-
-const post = {
-    web: [
-        {
-            title: "Making_blog", 
-            overview: "Making blog with html, javascript, css. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tortor posuere ac ut consequat semper viverra nam libero. Aliquam faucibus purus in massa tempor nec. Facilisi nullam vehicula ipsum a arcu cursus vitae congue. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est velit. Tristique senectus et netus et malesuada fames ac turpis egestas. Quisque non tellus orci ac. Odio ut enim blandit volutpat maecenas volutpat blandit. Id venenatis a condimentum vitae sapien pellentesque habitant morbi. Porttitor leo a diam sollicitudin tempor id eu nisl nunc. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Augue lacus viverra vitae congue eu consequat ac. In egestas erat imperdiet sed euismod nisi. Mi proin sed libero enim sed faucibus turpis. Adipiscing elit pellentesque habitant morbi. Tellus rutrum tellus pellentesque eu. Diam donec adipiscing tristique risus nec feugiat in."
-        },
-        {
-            title: "CSS+html_frontend",
-            overview: "Frontend that I learned by making blog."
-        }
-    ],
-    javascript: [
-        {
-            title: "Javascript_Discord_bot_develop",
-            overview: "Making Discord bot using node.js."
-        }
-    ]
-}
-
-const init = data => {
-    for (let c in data) {
-        for (let i in data[c]) {
-            category.push(c);
-            title.push(data[c][i].title);
-            overview.push(data[c][i].overview);
-        }
-    }
-};
-
 const pageInit = () => {
     const charset = document.createElement("meta");
     charset.setAttribute("charset", "utf-8");
@@ -116,50 +83,6 @@ const pageInit = () => {
     body.prepend(viewport);
 };
 
-const createBlogcard = (t) => {
-
-    const section = document.createElement("section");
-    section.setAttribute("class", "blogs");
-
-    for (i = t-1; i > -1; i--) {
-
-        const blogtitle = document.createElement("h4");
-        blogtitle.setAttribute("class", "blog-title");
-        blogtitle.innerHTML = title[i].replaceAll("_", " ");
-
-        const blogoverview = document.createElement("p");
-        blogoverview.setAttribute("class", "blog-overview");
-        blogoverview.innerHTML = overview[i];
-
-        const blogtext = document.createElement("div");
-        blogtext.setAttribute("class", "blog-text");
-        blogtext.appendChild(blogtitle);
-        blogtext.appendChild(blogoverview);
-
-        const img = document.createElement("img");
-        img.setAttribute("src", `./posts/${category[i]}/${title[i]}/thumbnail.png`);
-        img.setAttribute("class", "thumbnail");
-
-        const blogcard = document.createElement("a");
-        blogcard.setAttribute("class", "blog-card white-grow");
-        blogcard.setAttribute("href", `./posts/${category[i]}/${title[i]}`);
-        blogcard.appendChild(img);
-        blogcard.appendChild(blogtext);
-
-        section.appendChild(blogcard);
-
-    }
-    
-    const label = document.createElement("h3");
-    label.setAttribute("class", "category");
-    label.innerHTML = "Latest";
-
-    const main = document.querySelector(".main");
-    main.appendChild(label);
-    main.appendChild(section);
-
-};
-
 const cursorEffect = () => {
     const cursor = document.querySelector(".cursor")
 
@@ -218,9 +141,7 @@ const burgerAction = () => {
     });
 };
 
-init(post);
 pageInit();
-createBlogcard(title.length);
 cursorEffect();
 headerEffect();
 burgerAction();

@@ -1,8 +1,13 @@
+:root {
+    --background: #fafafa;
+    --shadow: #40404010;
+}
+
 body {
     margin: 0px;
     font-family: "-apple-system", "BlinkMacSystemFont", "Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: #404040;
-    background-color: #e9e9e9;
+    background-color: var(--background);
 }
 * {
     box-sizing: border-box;
@@ -18,14 +23,13 @@ a {
     color: #404040;
 }
 .header {
-    padding: 20px 30px;
+    padding: 20px;
     position: sticky;
     top: 0px;
-    background-color: #e9e9e9;
-    box-shadow: 0px 1px 5px #40404050;
+    background-color: inherit;
+    box-shadow: 0px 5px 20px var(--shadow);
     z-index: 10;
-    display: grid;
-    grid-template-columns: auto auto;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     transition: 0.3s ease;
@@ -35,49 +39,50 @@ a {
     padding: 0px;
     width: 0px;
     height: 100%;
-    background-color: #e9e9e9;
+    background-color: var(--background);
     list-style-type: none;
     display: flex;
     flex-direction: column;
     position: fixed;
     top: 62px;
     right: 0px;
-    box-shadow: -1px 5px 5px #40404050;
+    box-shadow: -5px 20px 20px var(--shadow);
     transition: all 0.5s ease;
 }
-#burger + label {
+.burger {
+    background-color: var(--background);
     width: 25px;
     height: 20px;
     cursor: pointer;
     display: block;
+    border: none;
 }
-#burger + label span {
+.burger span {
     display: block;
     position: relative;
-    top: 7px;
     width: 25px;
     height: 2px;
     background-color: #404040;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
-#burger + label span:first-child {
-    top: 0px;
+.burger span:first-child {
+    top: -7px;
 }
-#burger + label span:last-child {
-    top: 14px;
+.burger span:last-child {
+    top: 7px;
 }
-#burger:checked + label span:first-child {
-    top: 9px;
-    transform: rotate(135deg);
+.open-burger span:first-child {
+    top: 2px;
+    transform: rotate(-315deg);
 }
-#burger:checked + label span:nth-child(2) {
+.open-burger span:nth-child(2) {
     opacity: 0;
 }
-#burger:checked + label span:last-child {
-    top: 5px;
-    transform: rotate(-135deg);
+.open-burger span:last-child {
+    top: -2px;
+    transform: rotate(315deg);
 }
-#burger:checked ~ .navlist {
+.open-burger ~ .navlist {
     width: 250px;
 }
 
@@ -86,12 +91,9 @@ a {
     padding: 20px;
     text-transform: uppercase;
 }
-input {
-    display: none;
-}
 
 .main {
-    padding: 5vw;
+    padding: 20px;
 }
 .sidebar {
     display: none;
@@ -100,21 +102,41 @@ input {
 .blogs {
     display: grid;
     gap: 30px;
-    padding: 10px;
+}
+.blog-card {
+    display: block;
+    position: relative;
+    top: 0px;
+    height: 300px;
+    background-color: #ffffff;
+    box-shadow: 5px 5px 20px var(--shadow);
+    border-radius: 5px;
+    transition: all 0.3s ease;
 }
 .thumbnail {
+    border-radius: 5px 5px 0px 0px;
     width: 100%;
     height: 200px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
+}
+.blog-text {
+    margin: 10px;
+}
+.blog-title {
+    margin-bottom: 5px;
 }
 .blog-overview {
-    margin: 5px 0px 20px;
-    line-height: 150%;
+    display: -webkit-box;
+    margin-bottom: 20px;
+    line-height: 1.2rem;
+    font-size: 0.8rem;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #606060;
 }
 .category {
-    padding: 0px 10px;
+    padding-bottom: 20px;
 }
 
 .top-button {
@@ -145,7 +167,7 @@ input {
         font-size: 1rem;
     }
 
-    #burger + label {
+    .burger {
         display: none;
     }
 
@@ -183,6 +205,9 @@ input {
         transform-origin: bottom left;
     }
 
+    .main {
+        padding: 80px;
+    }
     .container {
         display: grid;
         grid-template-columns: minmax(250px, 1fr) 4fr;
@@ -191,10 +216,14 @@ input {
         display: initial;
     }
     .blogs {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     }
     .thumbnail {
-        height: 250px;
+        height: 200px;
+    }
+    .blog-card:hover {
+        top: -5px;
+        box-shadow: 10px 10px 20px var(--shadow);
     }
 
     .top-button {
@@ -206,9 +235,8 @@ input {
         position: fixed;
         width: 50px;
         height: 50px;
-        background-image: linear-gradient(135deg, #ffffff, #e9e9e9);
-        box-shadow: 1px 1px 5px #40404050,
-        inset 0px 0px 10px #ffffff50;
+        background-color: #ffffff;
+        box-shadow: 5px 5px 20px var(--shadow);
         z-index: 10;
         display: flex;
         justify-content: center;
@@ -216,6 +244,10 @@ input {
     }
     .arrow-img {
         transform: scale(0.5);
+        fill-rule: nonzero;
+        clip-rule: evenodd;
+        stroke-linecap: round;
+        stroke-linejoin: round;
     }
 
     .cursor {
@@ -239,7 +271,7 @@ input {
         transform: scale(2);
         transition: 0.3s ease;
         background-color: #e9e9e930;
-        border-color: #e9e9e9;
+        border-color: #ffffff;
         transition-property: border-color, backdrop-filter, background-color, transform;
         backdrop-filter: blur(1px);
         -webkit-backdrop-filter: blur(1px);
