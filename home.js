@@ -150,12 +150,21 @@ const createBlogcard = (t) => {
 
     }
     
+    const emoji = document.createElement("div");
+    emoji.setAttribute("class", "emoji");
+    emoji.innerHTML = "🕓";
+
     const label = document.createElement("h3");
     label.setAttribute("class", "category");
     label.innerHTML = "Latest";
 
+    const section_title = document.createElement("div");
+    section_title.setAttribute("class", "section-title");
+    section_title.appendChild(emoji);
+    section_title.appendChild(label);
+
     const main = document.querySelector(".main");
-    main.appendChild(label);
+    main.appendChild(section_title);
     main.appendChild(section);
 
 };
@@ -202,12 +211,21 @@ const cursorEffect = () => {
 
 const headerEffect = () => {
     const header = document.querySelector(".header");
+
+    let lastScroll = 0;
+    let scrollDownSave = 0;
+    let marginTop = 0;
+
     window.addEventListener("scroll", () => {
-        if (scrollY > 0) {
-            header.classList.add("scroll-header");
+        if (scrollY > lastScroll) {
+            scrollDownSave = Math.min(80, scrollDownSave + scrollY - lastScroll);
+            marginTop = -scrollDownSave;
         } else {
-            header.classList.remove("scroll-header");
+            scrollDownSave = Math.max(0, scrollDownSave - lastScroll + scrollY);
+            marginTop = -scrollDownSave;
         }
+        header.style.marginTop = marginTop + "px";
+        lastScroll = scrollY;
     });
 };
 
