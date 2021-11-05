@@ -20,15 +20,15 @@ const metadata = {
         },
         {
             title: "Wee!!!",
-            date: "2021.12.31.",
+            date: "2021.11.04.",
             thumbnail: false,
-            overview: "Last day of 2021. I am logging new year's goals."
+            overview: "Two months are left this year. This article is about my new year's goals."
         }
     ],
     javascript: [
         {
             title: "Javascript_Discord_bot_develop",
-            date: "2021.11.04.",
+            date: "2021.11.02.",
             thumbnail: true,
             overview: "Making Discord bot using node.js."
         }
@@ -182,7 +182,6 @@ const createBlogcard = (t) => {
         }
         
         blogcard.appendChild(blogtext);
-        
         section.appendChild(blogcard);
 
     }
