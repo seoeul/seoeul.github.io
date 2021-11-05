@@ -125,12 +125,31 @@ const cursorEffect = () => {
 
 const headerEffect = () => {
     const header = document.querySelector(".header");
+    const navlist = document.querySelector(".navlist");
+
+    let lastScroll = 0;
+    let scrollSave = 0;
+
     window.addEventListener("scroll", () => {
-        if (scrollY > 0) {
-            header.classList.add("scroll-header");
-        } else {
-            header.classList.remove("scroll-header");
+        let open = document.querySelector(".open-burger");
+
+        if (open) {
+            open.classList.remove("open-burger");
         }
+
+        if (scrollY > lastScroll) {
+            scrollSave = Math.min(80, scrollSave + scrollY - lastScroll);
+        } else {
+            scrollSave = Math.max(0, scrollSave - lastScroll + scrollY);
+        }
+
+        if (scrollY <= 0) {
+            scrollSave = -0;
+        }
+
+        header.style.marginTop = -scrollSave + "px";
+        navlist.style.top = 80 - scrollSave + "px";
+        lastScroll = scrollY;
     });
 };
 

@@ -211,20 +211,30 @@ const cursorEffect = () => {
 
 const headerEffect = () => {
     const header = document.querySelector(".header");
+    const navlist = document.querySelector(".navlist");
 
     let lastScroll = 0;
-    let scrollDownSave = 0;
-    let marginTop = 0;
+    let scrollSave = 0;
 
     window.addEventListener("scroll", () => {
-        if (scrollY > lastScroll) {
-            scrollDownSave = Math.min(80, scrollDownSave + scrollY - lastScroll);
-            marginTop = -scrollDownSave;
-        } else {
-            scrollDownSave = Math.max(0, scrollDownSave - lastScroll + scrollY);
-            marginTop = -scrollDownSave;
+        let open = document.querySelector(".open-burger");
+
+        if (open) {
+            open.classList.remove("open-burger");
         }
-        header.style.marginTop = marginTop + "px";
+
+        if (scrollY > lastScroll) {
+            scrollSave = Math.min(80, scrollSave + scrollY - lastScroll);
+        } else {
+            scrollSave = Math.max(0, scrollSave - lastScroll + scrollY);
+        }
+
+        if (scrollY <= 0) {
+            scrollSave = -0;
+        }
+
+        header.style.marginTop = -scrollSave + "px";
+        navlist.style.top = 80 - scrollSave + "px";
         lastScroll = scrollY;
     });
 };
