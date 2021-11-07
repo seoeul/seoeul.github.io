@@ -10,7 +10,7 @@ const pageInit = () => {
     head_title.textContent = "Stella Jo";
 
     const css_link = document.createElement("link");
-    css_link.setAttribute("href", "./home.css");
+    css_link.setAttribute("href", "../../../home.css");
     css_link.setAttribute("rel", "stylesheet");
     css_link.setAttribute("type", "text/css");
 
@@ -81,7 +81,7 @@ const pageInit = () => {
 
     const arrow_img = document.createElement("img");
     arrow_img.setAttribute("class", "arrow-img");
-    arrow_img.setAttribute("src", "./_data/arrow_up.svg");
+    arrow_img.setAttribute("src", "../../../_data/arrow_up.svg");
 
     const top_button = document.createElement("button");
     top_button.setAttribute("class", "top-button black-grow");
