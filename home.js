@@ -87,9 +87,12 @@ const pageInit = () => {
     head.appendChild(head_title);
     head.appendChild(css_link);
 
+    const cursor_div = document.createElement("div");
+    cursor_div.setAttribute("class", "cursor");
+
     const viewport = document.createElement("div");
     viewport.setAttribute("class", "viewport");
-    viewport.textContent = `<div class = "cursor"></div>`
+    viewport.appendChild(cursor_div);
 
     const title_a = document.createElement("a");
     title_a.setAttribute("href", "/blog");
@@ -101,11 +104,11 @@ const pageInit = () => {
 
     const burger = document.createElement("button");
     burger.setAttribute("class", "burger");
-    burger.textContent = `
-        <span></span>
-        <span></span>
-        <span></span>
-    `;
+
+    for (i = 0; i < 3; i += 1) {
+        let burger_bar = document.createElement("span");
+        burger.appendChild(burger_bar);
+    }
 
     const menulist = ["About", "Articles"];
     const navlist = document.createElement("ul");
@@ -143,15 +146,13 @@ const pageInit = () => {
     container.appendChild(sidebar);
     container.appendChild(main);
 
+    const arrow_img = document.createElement("img");
+    arrow_img.setAttribute("class", "arrow-img");
+    arrow_img.setAttribute("src", "./_data/arrow_up.svg");
+
     const top_button = document.createElement("button");
     top_button.setAttribute("class", "top-button black-grow");
-    top_button.textContent = `
-    <svg class = "arrow-img" height="100%" width="100%" viewBox="0 0 24 24">
-        <path stroke="#404040" stroke-width="1" d="M12+5.4782L12+18.5218" fill="none" opacity="1"/>
-        <path stroke="#404040" stroke-width="1" d="M12+5.4782L6.88592+10.8197" fill="none" opacity="1"/>
-        <path stroke="#404040" stroke-width="1" d="M12+5.4782L17.1141+10.8197" fill="none" opacity="1"/>
-    </svg>
-    `;
+    top_button.appendChild(arrow_img);
 
     const body = document.querySelector("body");
     body.prepend(top_button);

@@ -264,10 +264,6 @@ a {
     }
     .arrow-img {
         transform: scale(0.5);
-        fill-rule: nonzero;
-        clip-rule: evenodd;
-        stroke-linecap: round;
-        stroke-linejoin: round;
     }
 
     .cursor {
