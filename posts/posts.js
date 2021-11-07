@@ -7,7 +7,7 @@ const pageInit = () => {
     view.setAttribute("content", "initial-scale = 1.0, viewport-fit = cover");
 
     const head_title = document.createElement("title");
-    head_title.innerHTML = "Stella Jo - Blog";
+    head_title.textContent = "Stella Jo - Blog";
 
     const css_link = document.createElement("link");
     css_link.setAttribute("href", "../../../home.css");
@@ -22,11 +22,11 @@ const pageInit = () => {
 
     const viewport = document.createElement("div");
     viewport.setAttribute("class", "viewport");
-    viewport.innerHTML = `<div class = "cursor"></div>`
+    viewport.textContent = `<div class = "cursor"></div>`
 
     const title_a = document.createElement("a");
     title_a.setAttribute("href", "/blog");
-    title_a.innerHTML = "Stella Jo";
+    title_a.textContent = "Stella Jo";
 
     const blog_name = document.createElement("h3");
     blog_name.setAttribute("class", "title black-grow");
@@ -34,7 +34,7 @@ const pageInit = () => {
 
     const burger = document.createElement("button");
     burger.setAttribute("class", "burger");
-    burger.innerHTML = `
+    burger.textContent = `
         <span></span>
         <span></span>
         <span></span>
@@ -48,7 +48,7 @@ const pageInit = () => {
         let nav_a = document.createElement("a");
         nav_a.setAttribute("class", "nav-a black-grow");
         nav_a.setAttribute("href", "#");
-        nav_a.innerHTML = each;
+        nav_a.textContent = each;
 
         let nav_li = document.createElement("li");
         nav_li.appendChild(nav_a);
@@ -78,7 +78,7 @@ const pageInit = () => {
 
     const top_button = document.createElement("button");
     top_button.setAttribute("class", "top-button black-grow");
-    top_button.innerHTML = `
+    top_button.textContent = `
     <svg class = "arrow-img" height="100%" width="100%" viewBox="0 0 24 24">
         <path stroke="#404040" stroke-width="1" d="M12+5.4782L12+18.5218" fill="none" opacity="1"/>
         <path stroke="#404040" stroke-width="1" d="M12+5.4782L6.88592+10.8197" fill="none" opacity="1"/>
