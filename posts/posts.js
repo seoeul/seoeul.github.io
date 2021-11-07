@@ -6,9 +6,19 @@ const pageInit = () => {
     view.setAttribute("name", "viewport");
     view.setAttribute("content", "initial-scale = 1.0, viewport-fit = cover");
 
+    const head_title = document.createElement("title");
+    head_title.innerHTML = "Stella Jo - Blog";
+
+    const css_link = document.createElement("link");
+    css_link.setAttribute("href", "../../../home.css");
+    css_link.setAttribute("rel", "stylesheet");
+    css_link.setAttribute("type", "text/css");
+
     const head = document.querySelector("head");
-    head.prepend(view);
-    head.prepend(charset);
+    head.appendChild(charset);
+    head.appendChild(view);
+    head.appendChild(head_title);
+    head.appendChild(css_link);
 
     const viewport = document.createElement("div");
     viewport.setAttribute("class", "viewport");
@@ -18,9 +28,9 @@ const pageInit = () => {
     title_a.setAttribute("href", "/blog");
     title_a.innerHTML = "Stella Jo";
 
-    const title = document.createElement("h3");
-    title.setAttribute("class", "title black-grow");
-    title.appendChild(title_a);
+    const blog_name = document.createElement("h3");
+    blog_name.setAttribute("class", "title black-grow");
+    blog_name.appendChild(title_a);
 
     const burger = document.createElement("button");
     burger.setAttribute("class", "burger");
@@ -53,7 +63,7 @@ const pageInit = () => {
 
     const header = document.createElement("header");
     header.setAttribute("class", "header");
-    header.appendChild(title);
+    header.appendChild(blog_name);
     header.appendChild(navbar);
 
     const main = document.querySelector(".main");
