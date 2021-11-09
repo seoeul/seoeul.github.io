@@ -10,7 +10,7 @@ const pageInit = () => {
     head_title.textContent = "Stella Jo";
 
     const css_link = document.createElement("link");
-    css_link.setAttribute("href", "../../../home.css");
+    css_link.setAttribute("href", "/home.css");
     css_link.setAttribute("rel", "stylesheet");
     css_link.setAttribute("type", "text/css");
 
@@ -28,7 +28,7 @@ const pageInit = () => {
     viewport.appendChild(cursor_div);
 
     const title_a = document.createElement("a");
-    title_a.setAttribute("href", "/blog");
+    title_a.setAttribute("href", "/");
     title_a.textContent = "Stella Jo";
 
     const blog_name = document.createElement("h3");
@@ -69,19 +69,18 @@ const pageInit = () => {
     header.appendChild(blog_name);
     header.appendChild(navbar);
 
-    const main = document.querySelector(".main");
+    const content = document.querySelector(".content");
 
-    const sidebar = document.createElement("div");
+    const sidebar = document.createElement("section");
     sidebar.setAttribute("class", "sidebar");
 
-    const container = document.createElement("div");
-    container.setAttribute("class", "container");
+    const container = document.createElement("main");
     container.appendChild(sidebar);
-    container.appendChild(main);
+    container.appendChild(content);
 
     const arrow_img = document.createElement("img");
     arrow_img.setAttribute("class", "arrow-img");
-    arrow_img.setAttribute("src", "../../../_data/arrow_up.svg");
+    arrow_img.setAttribute("src", "/_data/arrow_up.svg");
 
     const top_button = document.createElement("button");
     top_button.setAttribute("class", "top-button black-grow");

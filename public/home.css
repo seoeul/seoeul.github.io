@@ -92,10 +92,10 @@ a {
     text-transform: uppercase;
 }
 
-.container {
+main {
     padding-top: 80px;
 }
-.main {
+.content {
     padding: 20px;
 }
 .sidebar {
@@ -219,12 +219,12 @@ a {
         transform-origin: bottom left;
     }
 
-    .main {
-        padding: 80px;
-    }
-    .container {
+    main {
         display: grid;
         grid-template-columns: minmax(250px, 1fr) 4fr;
+    }
+    .content {
+        padding: 80px;
     }
     .sidebar {
         display: initial;
