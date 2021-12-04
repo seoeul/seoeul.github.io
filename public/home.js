@@ -7,7 +7,7 @@ const pageInit = () => {
     view.setAttribute("content", "initial-scale = 1.0, viewport-fit = cover");
 
     const head_title = document.createElement("title");
-    head_title.textContent = "Stella Jo";
+    head_title.textContent = "Hielo";
 
     const css_link = document.createElement("link");
     css_link.setAttribute("href", "/home.css");
