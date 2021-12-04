@@ -29,7 +29,7 @@ const pageInit = () => {
 
     const title_a = document.createElement("a");
     title_a.setAttribute("href", "/");
-    title_a.textContent = "Stella Jo";
+    title_a.textContent = "Hielo";
 
     const blog_name = document.createElement("h3");
     blog_name.setAttribute("class", "title black-grow");
