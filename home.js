@@ -10,7 +10,7 @@ const pageInit = () => {
     head_title.textContent = "Hielo";
 
     const css_link = document.createElement("link");
-    css_link.setAttribute("href", "/home.css");
+    css_link.setAttribute("href", "./home.css");
     css_link.setAttribute("rel", "stylesheet");
     css_link.setAttribute("type", "text/css");
 
@@ -50,7 +50,7 @@ const pageInit = () => {
     menulist.forEach(each => {
         let nav_a = document.createElement("a");
         nav_a.setAttribute("class", "nav-a black-grow");
-        nav_a.setAttribute("href", "#");
+        nav_a.setAttribute("href", "/");
         nav_a.textContent = each;
 
         let nav_li = document.createElement("li");
