@@ -28,7 +28,7 @@ const pageInit = () => {
     viewport.appendChild(cursor_div);
 
     const title_a = document.createElement("a");
-    title_a.setAttribute("href", "/");
+    title_a.setAttribute("href", "./");
     title_a.textContent = "Hielo";
 
     const blog_name = document.createElement("h3");
@@ -50,7 +50,7 @@ const pageInit = () => {
     menulist.forEach(each => {
         let nav_a = document.createElement("a");
         nav_a.setAttribute("class", "nav-a black-grow");
-        nav_a.setAttribute("href", "/");
+        nav_a.setAttribute("href", "./");
         nav_a.textContent = each;
 
         let nav_li = document.createElement("li");
@@ -80,7 +80,7 @@ const pageInit = () => {
 
     const arrow_img = document.createElement("img");
     arrow_img.setAttribute("class", "arrow-img");
-    arrow_img.setAttribute("src", "/_data/arrow_up.svg");
+    arrow_img.setAttribute("src", "./_data/arrow_up.svg");
 
     const top_button = document.createElement("button");
     top_button.setAttribute("class", "top-button black-grow");
